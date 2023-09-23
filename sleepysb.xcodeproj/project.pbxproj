@@ -14,6 +14,7 @@
 		789074822AABDFF70048E2B5 /* sleepysbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789074812AABDFF70048E2B5 /* sleepysbTests.swift */; };
 		7890748C2AABDFF70048E2B5 /* sleepysbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7890748B2AABDFF70048E2B5 /* sleepysbUITests.swift */; };
 		7890748E2AABDFF70048E2B5 /* sleepysbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7890748D2AABDFF70048E2B5 /* sleepysbUITestsLaunchTests.swift */; };
+		78BD8A7A2ABF78E00020E6A0 /* ShellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD8A792ABF78E00020E6A0 /* ShellManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		789074872AABDFF70048E2B5 /* sleepysbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sleepysbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7890748B2AABDFF70048E2B5 /* sleepysbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepysbUITests.swift; sourceTree = "<group>"; };
 		7890748D2AABDFF70048E2B5 /* sleepysbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepysbUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		78BD8A792ABF78E00020E6A0 /* ShellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,8 @@
 		7890746E2AABDFF40048E2B5 /* sleepysb */ = {
 			isa = PBXGroup;
 			children = (
+				78BD8A7B2ABF7A560020E6A0 /* CustomViews */,
+				78BD8A782ABF78C70020E6A0 /* Managers */,
 				7890746F2AABDFF40048E2B5 /* AppDelegate.swift */,
 				789074712AABDFF40048E2B5 /* ViewController.swift */,
 				789074732AABDFF60048E2B5 /* Assets.xcassets */,
@@ -119,6 +123,21 @@
 				7890748D2AABDFF70048E2B5 /* sleepysbUITestsLaunchTests.swift */,
 			);
 			path = sleepysbUITests;
+			sourceTree = "<group>";
+		};
+		78BD8A782ABF78C70020E6A0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				78BD8A792ABF78E00020E6A0 /* ShellManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		78BD8A7B2ABF7A560020E6A0 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78BD8A7A2ABF78E00020E6A0 /* ShellManager.swift in Sources */,
 				789074722AABDFF40048E2B5 /* ViewController.swift in Sources */,
 				789074702AABDFF40048E2B5 /* AppDelegate.swift in Sources */,
 			);
@@ -430,9 +450,11 @@
 				DEVELOPMENT_TEAM = 9A26P3RMBN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "for put your mac sleep";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = asdfasdf;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -457,9 +479,11 @@
 				DEVELOPMENT_TEAM = 9A26P3RMBN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "for put your mac sleep";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = asdfasdf;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
