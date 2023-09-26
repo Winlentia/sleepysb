@@ -15,6 +15,9 @@
 		7890748C2AABDFF70048E2B5 /* sleepysbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7890748B2AABDFF70048E2B5 /* sleepysbUITests.swift */; };
 		7890748E2AABDFF70048E2B5 /* sleepysbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7890748D2AABDFF70048E2B5 /* sleepysbUITestsLaunchTests.swift */; };
 		78BD8A7A2ABF78E00020E6A0 /* ShellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD8A792ABF78E00020E6A0 /* ShellManager.swift */; };
+		78BD8A822ABFC3F00020E6A0 /* OnlyIntegerValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD8A812ABFC3F00020E6A0 /* OnlyIntegerValueFormatter.swift */; };
+		78BD8A852AC33C250020E6A0 /* PredefineActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD8A842AC33C250020E6A0 /* PredefineActionButton.swift */; };
+		78BD8A882AC33C470020E6A0 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD8A872AC33C470020E6A0 /* Int+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		7890748B2AABDFF70048E2B5 /* sleepysbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepysbUITests.swift; sourceTree = "<group>"; };
 		7890748D2AABDFF70048E2B5 /* sleepysbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepysbUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		78BD8A792ABF78E00020E6A0 /* ShellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellManager.swift; sourceTree = "<group>"; };
+		78BD8A812ABFC3F00020E6A0 /* OnlyIntegerValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyIntegerValueFormatter.swift; sourceTree = "<group>"; };
+		78BD8A842AC33C250020E6A0 /* PredefineActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefineActionButton.swift; sourceTree = "<group>"; };
+		78BD8A872AC33C470020E6A0 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,8 @@
 		7890746E2AABDFF40048E2B5 /* sleepysb */ = {
 			isa = PBXGroup;
 			children = (
+				78BD8A862AC33C3D0020E6A0 /* Extensions */,
+				78BD8A802ABFC3E50020E6A0 /* Formatters */,
 				78BD8A7B2ABF7A560020E6A0 /* CustomViews */,
 				78BD8A782ABF78C70020E6A0 /* Managers */,
 				7890746F2AABDFF40048E2B5 /* AppDelegate.swift */,
@@ -136,8 +144,25 @@
 		78BD8A7B2ABF7A560020E6A0 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				78BD8A842AC33C250020E6A0 /* PredefineActionButton.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		78BD8A802ABFC3E50020E6A0 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				78BD8A812ABFC3F00020E6A0 /* OnlyIntegerValueFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		78BD8A862AC33C3D0020E6A0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				78BD8A872AC33C470020E6A0 /* Int+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +298,9 @@
 				78BD8A7A2ABF78E00020E6A0 /* ShellManager.swift in Sources */,
 				789074722AABDFF40048E2B5 /* ViewController.swift in Sources */,
 				789074702AABDFF40048E2B5 /* AppDelegate.swift in Sources */,
+				78BD8A882AC33C470020E6A0 /* Int+Extensions.swift in Sources */,
+				78BD8A852AC33C250020E6A0 /* PredefineActionButton.swift in Sources */,
+				78BD8A822ABFC3F00020E6A0 /* OnlyIntegerValueFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +478,7 @@
 				DEVELOPMENT_TEAM = 9A26P3RMBN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "for put your mac sleep";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -479,6 +508,7 @@
 				DEVELOPMENT_TEAM = 9A26P3RMBN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "for put your mac sleep";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
