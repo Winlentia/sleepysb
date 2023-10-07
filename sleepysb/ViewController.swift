@@ -10,25 +10,21 @@ import Cocoa
 class ViewController: NSViewController {
     
     let shellManager = ShellManager()
-    var isTimerActive: Bool = false
-    var timer: Timer? = nil
-    let predefinedSeconds: [Int] = [60,900,1800,2700,3600]
+    let sleepTimerManager = SleepTimerManager.shared
+    let predefinedSeconds: [Int] = [900,1800,2700,3600]
     
     @IBOutlet weak var stackPredefines: NSStackView!
-    var durationInSeconds: Int?
-    var remainingSeconds: Int?
     
     @IBOutlet weak var labelRemaining: NSTextField!
-    
     @IBOutlet weak var textFieldSeconds: NSTextField!
     @IBOutlet weak var textFieldMinutes: NSTextField!
     @IBOutlet weak var textFieldHour: NSTextField!
     
     @IBOutlet weak var buttonStart: NSButton!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sleepTimerManager.delegate = self
         setupTextFields()
         labelRemaining.stringValue = ""
         
@@ -63,33 +59,28 @@ class ViewController: NSViewController {
     }
 
 
-    fileprivate func startAction(isUserTriggers: Bool = true) {
-        if !isUserTriggers {
-            isTimerActive = !isTimerActive
+    fileprivate func startAction() {
+        let timeInSeconds = calculateTimerInSeconds()
+        if timeInSeconds == 0 {
+            return
         }
-        buttonStart.title = "Stop"
-        durationInSeconds = calculateTimerInSeconds()
-        remainingSeconds = calculateTimerInSeconds()
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        sleepTimerManager.startAction(durationInSeconds: calculateTimerInSeconds()) {
+            self.buttonStart.title = "Stop"
+        }
     }
     
-
-    
-    fileprivate func stopAction(isUserTriggers: Bool = true) {
-        if !isUserTriggers {
-            isTimerActive = !isTimerActive
+    fileprivate func stopAction() {
+        sleepTimerManager.stopAction() {
+            buttonStart.title = "Start"
+            labelRemaining.stringValue = ""
         }
-        buttonStart.title = "Start"
-        labelRemaining.stringValue = ""
-        invalidateTimer()
     }
     
     @IBAction func actionStart(_ sender: Any) {
-        isTimerActive = !isTimerActive
-        if isTimerActive {
-            startAction()
-        } else {
+        if sleepTimerManager.isTimerActive() {
             stopAction()
+        } else {
+            startAction()
         }
     }
     
@@ -102,32 +93,11 @@ class ViewController: NSViewController {
         }
     }
     
-    @objc func fireTimer() {
-        guard let remainingSeconds = remainingSeconds else {
-            invalidateTimer()
-            return
-        }
-        
-        self.remainingSeconds! = self.remainingSeconds! - 1
-        self.labelRemaining.stringValue = self.remainingSeconds!.secondsToHoursMinutesSecondsString()
-        
-        if remainingSeconds == 0 {
-            invalidateTimer()
-            shellManager.sleepMac()
-            stopAction(isUserTriggers: false)
-        }
-    }
-    
     func calculateTimerInSeconds() -> Int {
         let seconds = Int(textFieldSeconds.stringValue) ?? 0
         let minutes = (Int(textFieldMinutes.stringValue) ?? 0) * 60
         let hours = (Int(textFieldHour.stringValue) ?? 0) * 60 * 60
         return seconds + minutes + hours
-    }
-    
-    fileprivate func invalidateTimer() {
-        timer?.invalidate()
-        timer = nil
     }
 }
 
@@ -145,4 +115,22 @@ extension ViewController: NSTextFieldDelegate {
     }
 }
 
+extension ViewController: SleepTimerManagerDelegate {
+    func timerFired(remainingDurationInSeconds: Int?, remainingDurationTitle: String?) {
+        if let title = remainingDurationTitle {
+            self.labelRemaining.stringValue =  title
+        }
+    }
+    
+    func timerStarted() {
+        self.buttonStart.title = "Stop"
+    }
+    
+    func timerCompleted() {
+        buttonStart.title = "Start"
+        labelRemaining.stringValue = ""
+    }
+    
+    
+}
 

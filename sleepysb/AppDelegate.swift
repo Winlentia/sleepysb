@@ -32,17 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 extension AppDelegate {
     @objc func menuItemSelector(_ sender: Any?) {
         guard let menuItem = sender as? AppMenuItem else { return }
-        switch menuItem.appStatusBarItem {
-        case .sleep15Min:
-            print(menuItem.title)
-        case .sleep30Min:
-            print(menuItem.title)
-        case .sleep45Min:
-            print(menuItem.title)
-        case .sleep1Hour:
-            print(menuItem.title)
-        }
-        
+        SleepTimerManager.shared.startAction(durationInSeconds: menuItem.appStatusBarItem.seconds(), completion: {})
     }
 }
 

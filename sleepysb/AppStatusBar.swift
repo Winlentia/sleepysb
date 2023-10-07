@@ -74,6 +74,19 @@ extension AppStatusBarMenuItem {
             return "4"
         }
     }
+    
+    func seconds() -> Int {
+        switch self {
+        case .sleep15Min:
+            return 60*15
+        case .sleep30Min:
+            return 60*30
+        case .sleep45Min:
+            return 60*45
+        case .sleep1Hour:
+            return 60*60
+        }
+    }
 }
 
 
