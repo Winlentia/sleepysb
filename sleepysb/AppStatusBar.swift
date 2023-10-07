@@ -22,7 +22,7 @@ class AppStatusBar {
             menu.addItem(AppMenuItem(appStatusBarItem: item))
         }
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Quit Quotes", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         menuBarItem.menu = menu
     }
 }

@@ -35,6 +35,11 @@ class ViewController: NSViewController {
             stackPredefines.addArrangedSubview(button)
         }
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.window?.title = "Sleepy"
+    }
 
     override var representedObject: Any? {
         didSet {
