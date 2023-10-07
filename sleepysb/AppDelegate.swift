@@ -10,12 +10,11 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    var appStatusBar: AppStatusBar!
     
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        setupStatusBar()
+        appStatusBar = AppStatusBar()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -26,34 +25,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
     
-    
-    private func setupStatusBar() {
+    @objc func menuItemSelector(_ sender: Any?) {
+        guard let menuItem = sender as? NSMenuItem else { return }
         
-        let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
-        if let button = statusItem.button {
-          button.image = NSImage(named:NSImage.Name("powersleep"))
-          button.action = #selector(printQuote(_:))
+        if menuItem.title == "Print Quote" {
+            print("Print Quote")
         }
-        let menu = NSMenu()
-
-        menu.addItem(NSMenuItem(title: "Print Quote", action: #selector(AppDelegate.printQuote(_:)), keyEquivalent: "P"))
-        menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Quit Quotes", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-        statusItem.menu = menu
-
     }
-    
-    
-    
-    @objc func printQuote(_ sender: Any?) {
-      let quoteText = "Never put off until tomorrow what you can do the day after tomorrow."
-      let quoteAuthor = "Mark Twain"
-      
-      print("\(quoteText) — \(quoteAuthor)")
-    }
-    
-    
-
-
 }
 
