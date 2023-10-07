@@ -3,7 +3,7 @@ Project generated for put mac sleep mode while watching something during sleepin
 
 Screenshots:
 
-![[sleepyapp.png]]
+![[Attachments/sleepyapp.png]]
 
 
-![[sleepystatusbar.png]]
+![[Attachments/sleepystatusbar.png]]
