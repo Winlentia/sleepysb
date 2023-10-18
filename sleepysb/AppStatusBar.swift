@@ -12,6 +12,7 @@ class AppStatusBar {
     let menuBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     
     init() {
+        
         if let button = menuBarItem.button {
             button.image = NSImage(named: "powersleep")
         }
@@ -42,6 +43,7 @@ class AppMenuItem: NSMenuItem {
 }
 
 enum AppStatusBarMenuItem: CaseIterable {
+    case custom
     case sleep15Min
     case sleep30Min
     case sleep45Min
@@ -51,6 +53,8 @@ enum AppStatusBarMenuItem: CaseIterable {
 extension AppStatusBarMenuItem {
     func title() -> String {
         switch self {
+        case .custom:
+            return "Custom"
         case .sleep15Min:
             return "Sleep 15 Min"
         case .sleep30Min:
@@ -64,6 +68,8 @@ extension AppStatusBarMenuItem {
     
     func keyEquivalent() -> String {
         switch self {
+        case .custom:
+            return "0"
         case .sleep15Min:
             return "1"
         case .sleep30Min:
@@ -77,6 +83,8 @@ extension AppStatusBarMenuItem {
     
     func seconds() -> Int {
         switch self {
+        case .custom:
+            return 0
         case .sleep15Min:
             return 60*15
         case .sleep30Min:

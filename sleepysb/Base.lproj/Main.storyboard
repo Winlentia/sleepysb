@@ -890,6 +890,87 @@
                                     <action selector="actionStart:" target="XfG-lQ-9wD" id="eBn-1j-Mew"/>
                                 </connections>
                             </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="hyb-hE-XkY" userLabel="seperator">
+                                <rect key="frame" x="0.0" y="126" width="410" height="5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="34B-ml-7rh"/>
+                                </constraints>
+                            </customView>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PIy-oD-1qZ">
+                                <rect key="frame" x="0.0" y="0.0" width="410" height="118"/>
+                                <subviews>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pdp-iY-MUP">
+                                        <rect key="frame" x="8" y="98" width="394" height="20"/>
+                                        <subviews>
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Z3-gD-ImW">
+                                                <rect key="frame" x="-2" y="4" width="352" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Turn bluetooth off when mac sleeps" id="CfD-E7-ruD">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="PLj-Uv-M6g">
+                                                <rect key="frame" x="354" y="-2" width="42" height="23"/>
+                                            </switch>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="rQv-RW-NZk"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h3F-z3-gJm">
+                                        <rect key="frame" x="8" y="68" width="394" height="22"/>
+                                        <subviews>
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O3N-cb-UuO">
+                                                <rect key="frame" x="-2" y="6" width="352" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Turn bluetooth on when mac opens" id="Z9p-nH-2y3">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="ZzG-R2-YCv">
+                                                <rect key="frame" x="354" y="-2" width="42" height="25"/>
+                                            </switch>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Ogq-Jo-dTI"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="R1X-2r-V5J"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Pdp-iY-MUP" firstAttribute="leading" secondItem="PIy-oD-1qZ" secondAttribute="leading" constant="8" id="mHR-rT-rpt"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pdp-iY-MUP" secondAttribute="trailing" constant="8" id="n0u-Ky-JhC"/>
+                                    <constraint firstAttribute="height" constant="118" id="oSa-6F-rov"/>
+                                    <constraint firstAttribute="trailing" secondItem="h3F-z3-gJm" secondAttribute="trailing" constant="8" id="qP9-1X-XqZ"/>
+                                    <constraint firstItem="h3F-z3-gJm" firstAttribute="leading" secondItem="PIy-oD-1qZ" secondAttribute="leading" constant="8" id="uJg-ZF-2U4"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="CgR-f6-PJ7" firstAttribute="top" secondItem="vl1-3Z-PdB" secondAttribute="bottom" constant="8" symbolic="YES" id="0Af-rg-AxK"/>
@@ -897,13 +978,20 @@
                             <constraint firstItem="BNO-fx-m0b" firstAttribute="centerY" secondItem="vl1-3Z-PdB" secondAttribute="centerY" id="7yw-XZ-OJL"/>
                             <constraint firstItem="C6i-n0-Tfz" firstAttribute="top" secondItem="RcZ-73-Vqn" secondAttribute="bottom" constant="8" id="A57-Zj-3Gt"/>
                             <constraint firstItem="RcZ-73-Vqn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="AR1-zp-x4y"/>
+                            <constraint firstItem="hyb-hE-XkY" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Ikm-m6-MM8"/>
+                            <constraint firstItem="PIy-oD-1qZ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="LFj-gp-M7m"/>
                             <constraint firstItem="CgR-f6-PJ7" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="Oz2-3f-cjA"/>
                             <constraint firstItem="vl1-3Z-PdB" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="SE3-sE-nhR"/>
                             <constraint firstAttribute="trailing" secondItem="RcZ-73-Vqn" secondAttribute="trailing" constant="20" symbolic="YES" id="TB2-th-FUA"/>
                             <constraint firstAttribute="trailing" secondItem="CgR-f6-PJ7" secondAttribute="trailing" constant="20" symbolic="YES" id="V0f-aR-MF5"/>
+                            <constraint firstItem="hyb-hE-XkY" firstAttribute="top" secondItem="C6i-n0-Tfz" secondAttribute="bottom" constant="5" id="bGl-WO-CKK"/>
+                            <constraint firstAttribute="trailing" secondItem="hyb-hE-XkY" secondAttribute="trailing" id="bHm-dl-6jS"/>
                             <constraint firstItem="RcZ-73-Vqn" firstAttribute="top" secondItem="CgR-f6-PJ7" secondAttribute="bottom" constant="8" symbolic="YES" id="bbl-i4-Out"/>
                             <constraint firstItem="BNO-fx-m0b" firstAttribute="leading" secondItem="vl1-3Z-PdB" secondAttribute="trailing" constant="10" id="d1q-r3-YIb"/>
+                            <constraint firstItem="PIy-oD-1qZ" firstAttribute="top" secondItem="hyb-hE-XkY" secondAttribute="bottom" constant="8" symbolic="YES" id="k9u-KT-UjU"/>
                             <constraint firstAttribute="trailing" secondItem="C6i-n0-Tfz" secondAttribute="trailing" constant="20" symbolic="YES" id="kQL-oa-XXz"/>
+                            <constraint firstAttribute="trailing" secondItem="PIy-oD-1qZ" secondAttribute="trailing" id="mIf-pB-MIN"/>
+                            <constraint firstAttribute="bottom" secondItem="PIy-oD-1qZ" secondAttribute="bottom" id="ssP-fQ-6iB"/>
                         </constraints>
                     </view>
                     <connections>

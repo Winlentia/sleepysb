@@ -112,11 +112,11 @@
 				78BD8A7B2ABF7A560020E6A0 /* CustomViews */,
 				78BD8A782ABF78C70020E6A0 /* Managers */,
 				7890746F2AABDFF40048E2B5 /* AppDelegate.swift */,
+				787105A02AD1F528008102B9 /* AppStatusBar.swift */,
 				789074712AABDFF40048E2B5 /* ViewController.swift */,
 				789074732AABDFF60048E2B5 /* Assets.xcassets */,
 				789074752AABDFF60048E2B5 /* Main.storyboard */,
 				789074782AABDFF60048E2B5 /* sleepysb.entitlements */,
-				787105A02AD1F528008102B9 /* AppStatusBar.swift */,
 			);
 			path = sleepysb;
 			sourceTree = "<group>";

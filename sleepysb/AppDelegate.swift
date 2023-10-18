@@ -32,6 +32,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 extension AppDelegate {
     @objc func menuItemSelector(_ sender: Any?) {
         guard let menuItem = sender as? AppMenuItem else { return }
+        if menuItem.appStatusBarItem == .custom {
+//            NSApp.activate(ignoringOtherApps: true)
+//            [[NSApplication sharedApplication] activateIgnoringOtherApps : YES];
+            NSApp.setActivationPolicy(.regular)
+            NSApplication.shared.activate(ignoringOtherApps: true)
+            
+            
+            return
+        }
         SleepTimerManager.shared.startAction(durationInSeconds: menuItem.appStatusBarItem.seconds(), completion: {})
     }
 }
