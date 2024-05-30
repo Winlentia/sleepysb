@@ -25,10 +25,7 @@ class SleepTimerManager {
     var remainingSeconds: Int?
     
     func startAction(durationInSeconds: Int, completion: () -> ()) {
-//        if !isUserTriggers {
-//            isTimerActive = !isTimerActive
-//        }
-//        buttonStart.title = "Stop"
+        invalidateTimer()
         self.durationInSeconds = durationInSeconds
         remainingSeconds = durationInSeconds
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
@@ -37,11 +34,6 @@ class SleepTimerManager {
     }
     
     func stopAction(completion: () -> ()) {
-//        if !isUserTriggers {
-//            isTimerActive = !isTimerActive
-//        }
-//        buttonStart.title = "Start"
-//        labelRemaining.stringValue = ""
         invalidateTimer()
         completion()
     }

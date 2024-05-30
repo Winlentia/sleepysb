@@ -18,7 +18,7 @@ class ShellManager {
     }
     
     @discardableResult // Add to suppress warnings when you don't want/need a result
-    func safeShell(_ command: String) throws -> String {
+    private func safeShell(_ command: String) throws -> String {
         let task = Process()
         let pipe = Pipe()
         
@@ -37,7 +37,7 @@ class ShellManager {
     }
     
     @discardableResult
-    func shell(_ args: String...) -> Int32 {
+    private func shell(_ args: String...) -> Int32 {
         let task = Process()
         task.launchPath = "/usr/bin/env"
         task.arguments = args
